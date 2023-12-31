@@ -1,0 +1,21 @@
+<policies>
+    <inbound>
+        <base />
+        <set-backend-service id="apim-generated-policy" backend-id="__BACKEND-ID__" />
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+        <set-header name="miztiik-automation-apim-inserted" exists-action="override">
+            <value>yes</value>
+        </set-header>
+        <emit-metric name="miztiik_store_events" value="1" namespace="miztiik-api-metrics">
+        <dimension name="event_count" value="1" />
+        </emit-metric>
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

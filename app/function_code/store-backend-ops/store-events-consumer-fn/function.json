@@ -1,0 +1,14 @@
+{
+    "scriptFile": "__init__.py",
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "msg",
+            "type": "serviceBusTrigger",
+            "direction": "in",
+            "topicName": "%SVC_BUS_TOPIC_NAME%",
+            "subscriptionName": "%SALES_EVENTS_SUBSCRIPTION_NAME%",
+            "connection": "SVC_BUS_CONNECTION"
+        }
+    ]
+}
